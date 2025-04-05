@@ -1,0 +1,21 @@
+class Solution {
+    //Two Pointer method 
+    public int[] twoSum(int[] nums, int target) {
+        int sum = 0;
+        int result[] = new int[2];
+
+        //Here remember i and j hold the indices not the values if you want values then use nums[i] like this 
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = (nums.length - 1); j > i; j--) {
+                sum = nums[i] + nums[j];
+                if (sum == target)
+                //here we are creating a new array with the indices i and j and then pointing to result array 
+                {
+                    result = new int[] { i, j };
+                    return result;//we can exit early if found
+                }
+            }
+        }
+        return result;//if not found then by default 0,0 we will be returned 
+    }
+}
