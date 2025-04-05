@@ -19,3 +19,26 @@ class Solution {
         return result;//if not found then by default 0,0 we will be returned 
     }
 }
+
+//Using HashMap method
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int [] result = new int[2];
+        
+        
+        HashMap<Integer, Integer> map = new HashMap();
+        for(int i =0 , j=0; i < nums.length ;  i++)
+        {
+            int diff = target - nums[i];
+            if(!map.containsKey(diff))
+            {
+                map.put(nums[i],i);
+            }
+            else {
+                j = map.get(diff);
+                return result = new int [] {i,j};
+            }
+        }
+        return result;
+    }
+}
